@@ -1,9 +1,9 @@
-import 'package:archive_app/views/detail_page.dart';
-import 'package:archive_app/views/edit_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:archive_app/controllers/main_controller.dart';
 import 'package:archive_app/models/archive_model.dart';
+import 'package:archive_app/views/detail_page.dart';
+import 'package:archive_app/views/edit_page.dart';
 
 class ListTileData extends GetView<MainController> {
   final ArchiveModel data;
@@ -95,6 +95,29 @@ class TextFieldData extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class DetailDataRow extends StatelessWidget {
+  const DetailDataRow(this.data, {super.key});
+
+  final String data;
+
+  @override
+  Widget build(BuildContext context) {
+    TextStyle textStyle = const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
+    return Container(
+      padding: const EdgeInsets.all(8),
+      width: double.infinity,
+      height: context.height / 12,
+      decoration: BoxDecoration(
+        color: Colors.grey.shade300,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Center(
+        child: Text(data, style: textStyle),
+      ),
     );
   }
 }

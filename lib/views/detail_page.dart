@@ -1,6 +1,6 @@
-import 'package:archive_app/models/archive_model.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:archive_app/models/archive_model.dart';
+import 'package:archive_app/widgets/widgets.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage(this.data, {super.key});
@@ -25,29 +25,6 @@ class DetailPage extends StatelessWidget {
             DetailDataRow(data.selected ? 'Selected' : 'None'),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class DetailDataRow extends StatelessWidget {
-  const DetailDataRow(this.data, {super.key});
-
-  final String data;
-
-  @override
-  Widget build(BuildContext context) {
-    TextStyle textStyle = const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
-    return Container(
-      padding: const EdgeInsets.all(8),
-      width: double.infinity,
-      height: context.height / 12,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade300,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Center(
-        child: Text(data, style: textStyle),
       ),
     );
   }
